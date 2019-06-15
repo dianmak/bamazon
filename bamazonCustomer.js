@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 
+
 const connection = mysql.createConnection({
     host: "localhost",
 
@@ -16,7 +17,7 @@ connection.connect(function (err) {
     if (err) throw err;
     display();
 
-    purchase();
+    // purchase();
 });
 
 function purchase() {
@@ -58,6 +59,8 @@ function display() {
             let item = res[i];
             console.log(`Item ID: ${item.item_id}  ||  Product: ${item.product_name}  ||  Department: ${item.department_name}  || Price: $${item.price}  ||  Stock: ${item.stock_quantity}`);
         }
+
+        purchase();
     });
 
 }

@@ -10,6 +10,11 @@ Bamazon is an Amazon-like storefront in the form of a Node application. It will 
 4. Input the quantity of this item you wish to purchase. Press Enter.
 5. Depending on whether there is enough of the item in stock, your purchase will be completed or will not go through.
 
+**Screenshots**
+![Example of a Completed Purchase](screenshots/completed.png "How to Make a Bamazon Purchase")
+
+![Example of a Purchase Attempt with Insufficient Stock Quantity](screenshots/movie.png "Bamazon Handling Insufficient Quantity")
+
 ##Technology Utilized 
 * mysql npm package (https://www.npmjs.com/package/mysql)
 * inquirer npm package (https://www.npmjs.com/package/inquirer)

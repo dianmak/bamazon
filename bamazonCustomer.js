@@ -37,17 +37,21 @@ function purchase() {
 
 function makePurchase(answer) {
     console.log(answer);
-    connection.query("SELECT stock_quantity FROM products WHERE ?", { item_id: answer.productID }, function (err, res) {
+    connection.query("SELECT stock_quantity, price FROM products WHERE ?", { item_id: answer.productID }, function (err, res) {
         if (err) throw err;
         let q = res[0].stock_quantity;
+        let p = res[0].price;
+
         if (answer.quantity > q) {
             console.log("Apologies, our stock quantity of this item is not sufficient to fulfill your purchase.")
         }
         else {
-            q = q - answer.quantity;
-            connection.query("UPDATE products SET ? WHERE ? ", [{ stock_quantity: q }, { item_id: answer.productID }], function (err) {
+            let newquantity = q - answer.quantity;
+            connection.query("UPDATE products SET ? WHERE ? ", [{ stock_quantity: newquantity }, { item_id: answer.productID }], function (err) {
                 if (err) throw err;
-                else console.log("Purchase completed.");
+                let total = answer.quantity * p;
+
+                console.log("Purchase completed. You spent $" + total);
             });
         }
     });

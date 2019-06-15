@@ -1,9 +1,9 @@
 # bamazon
 
-##Overview
+**Overview**
 Bamazon is an Amazon-like storefront in the form of a Node application. It will take in orders from customers and deplete stock from the store's inventory.
 
-##How to Use
+**How to Use**
 1. Run node bamazonCustomer.js in terminal.
 2. Peruse list of items for sale.
 3. Upon prompt, input the numeric ID of the item you wish to purchase in the command line via inquirer. Press Enter.
@@ -13,9 +13,9 @@ Bamazon is an Amazon-like storefront in the form of a Node application. It will 
 **Screenshots**
 ![Example of a Completed Purchase](screenshots/completed.png "How to Make a Bamazon Purchase")
 
-![Example of a Purchase Attempt with Insufficient Stock Quantity](screenshots/movie.png "Bamazon Handling Insufficient Quantity")
+![Example of a Purchase Attempt with Insufficient Stock Quantity](screenshots/incompleted.png "Bamazon Handling Insufficient Quantity")
 
-##Technology Utilized 
+**Technology Utilized**
 * mysql npm package (https://www.npmjs.com/package/mysql)
 * inquirer npm package (https://www.npmjs.com/package/inquirer)
 * SQL database
